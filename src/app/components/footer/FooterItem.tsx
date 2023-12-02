@@ -11,7 +11,7 @@ const FooterItem = ({
     <p
       className={`text-my-black ${
         active && "hover:cursor-pointer hover:scale-105"
-      } transition duration-[400ms] py-3`}
+      } transition duration-[400ms] py-1 lg:py-3`}
     >
       {children}
     </p>

@@ -2,7 +2,6 @@ import React from "react";
 import TrainYourApp from "../components/page/TrainYourApp";
 import PageDescription from "../components/page/PageDescription";
 import PageTitle from "../components/page/PageTitle";
-import Image from "next/image";
 import CardLayout from "../components/page/cards/CardLayout";
 
 const test = () => {

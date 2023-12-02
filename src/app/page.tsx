@@ -7,14 +7,13 @@ import TrainYourApp from "./components/page/TrainYourApp";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center ">
-      {/* <Navbar /> */}
       <div className="flex flex-col w-full items-center text-center py-20">
         <PageTitle title="Tour" />
         <PageDescription>
           Build your first machine learning model in ten minutes. No code or
           experience required.
         </PageDescription>
-        <div className="rounded-md py-16">
+        <div className="rounded-md py-16 w-fit max-w-[85%]">
           <Image
             src={"/website.jpg"}
             alt="Website Image"
@@ -25,7 +24,6 @@ export default function Home() {
         </div>
         <TrainYourApp />
       </div>
-      {/* <Footer /> */}
     </main>
   );
 }

@@ -11,13 +11,13 @@ const Card = ({title, desc, date, imgUrl}: {title: string, desc: string, date: s
         style={{ backgroundImage: `url(${imgUrl})` }}
       ></div>
       <div className="h-1/2 text-left p-8 text-my-black rounded-b-3xl flex flex-col">
-        <p className="font-bold text-[1.4rem] pb-2">
+        <p className="font-bold text-lg lg:text-[1.4rem] pb-2">
           {title}
         </p>
-        <p className=" text-[1.4rem] flex-1">
+        <p className="text-lg lg:text-[1.4rem] flex-1">
           {desc}
         </p>
-        <p className=" text-gray-400 font-medium text-xl h-fit">
+        <p className=" text-gray-400 font-medium text-base lg:text-xl h-fit">
           Release &#8226; {date}
         </p>
       </div>

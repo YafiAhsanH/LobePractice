@@ -88,16 +88,50 @@ const CardLayout = () => {
   }
 
   return (
-    <div className="flex w-full justify-between px-[12%] py-12">
-      <div className="flex flex-col w-full p-5">
-        {oddCards
-          ? calculateOddColumns(cards.slice(0, cards.length - 2))
-          : calculateOddColumns(cards)}
+    <>
+      {/* desktop layout */}
+      <div className="lg:flex flex-col w-full px-[12%] py-12 hidden ">
+        <div className="flex w-full justify-between">
+          <div className="flex flex-col w-full p-5">
+            {oddCards
+              ? calculateOddColumns(cards.slice(0, cards.length - 2))
+              : calculateOddColumns(cards)}
+          </div>
+          <div className="flex flex-col w-full p-5">
+            {calculateEvenColumns(cards)}
+          </div>
+        </div>
+        {(oddCards || cards.length === 1) && (
+          <div className="flex w-full justify-between px-[25%]">
+            <div className="flex w-full">
+              <Card
+                key={cards[cards.length - 1].id}
+                title={cards[cards.length - 1].title}
+                desc={cards[cards.length - 1].desc}
+                date={cards[cards.length - 1].date}
+                imgUrl={cards[cards.length - 1].imgUrl}
+              />
+            </div>
+          </div>
+        )}
       </div>
-      <div className="flex flex-col w-full p-5">
-        {calculateEvenColumns(cards)}
+      {/* mobile layout */}
+      <div className="flex flex-col w-full md:px-[12%] py-12 lg:hidden">
+        <div className="flex w-full justify-between">
+          <div className="flex flex-col w-full p-5">
+            {cards.map((card) => (
+              <Card
+                key={card.id}
+                title={card.title}
+                desc={card.desc}
+                date={card.date}
+                imgUrl={card.imgUrl}
+              />
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
